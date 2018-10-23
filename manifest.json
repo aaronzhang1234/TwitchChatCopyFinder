@@ -1,0 +1,14 @@
+{
+    "name":"Twitch CopyPasta Finder",
+    "version": "1.0",
+    "description":"Find your pastas",
+    "permissions":["activeTab","declarativeContent","storage"],
+    "background":{
+        "scripts":["copypasta.js"],
+        "persistent":false
+    },
+    "page_action":{
+        "default_popup":"popup.html"
+    },
+    "manifest_version":2
+}
