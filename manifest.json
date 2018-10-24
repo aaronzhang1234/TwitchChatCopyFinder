@@ -4,7 +4,7 @@
     "description":"Find your pastas",
     "permissions":["activeTab","declarativeContent","storage"],
     "background":{
-        "scripts":["copypasta.js"],
+        "scripts":["background.js"],
         "persistent":false
     },
     "page_action":{

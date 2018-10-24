@@ -7,12 +7,9 @@ let bkg = chrome.extension.getBackgroundPage();
 let pastaland = document.getElementById('pastaland');
 
 get_pasta.onclick = function() {
-    bkg.console.log("hello");
-    let pasta = pastaland.value;
-    for (let i = 0; i < 32; i++) {
-        let sig = generateSignature();
-        bkg.console.log(sig + pasta);
-    }
+    chrome.tabs.executeScript({
+        file:'pasta-finder.js'
+    });
 };
 
 //return a random 16 character signature
