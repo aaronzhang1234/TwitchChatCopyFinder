@@ -1,26 +1,23 @@
-console.log('kill me');
+console.log('startu');
 
-window.addEventListener('locationchange', function(){
-    console.log('location changed!');
-});
-window.onpopstate = function(event){
-    console.log(event);
-};
-window.onhashchange = function(){
-    console.log("changed hash");
-};
+let historical_loc = window.location.href;
 
-setInterval(function(){console.log("still functioning");}, 3000);
+setInterval(compare_locs, 5000);
+function compare_locs(){ 
+    console.log(historical_loc);
+    current_loc = window.location.href;
+    if(historical_loc != current_loc){
+        chat = document.getElementsByClassName('tw-flex-grow-1 tw-full-height tw-pd-b-1')[0];
+        historical_loc = current_loc;
+        observer.observe(chat, config);
+    }
+}
 
-let bttvInstalled = document.getElementById("bttv-font-size");
-console.log(bttvInstalled);
 let chat = document.getElementsByClassName('tw-flex-grow-1 tw-full-height tw-pd-b-1')[0];
 let config = { childList: true };
 
 let callback = function(list) {
     const nms = String.fromCharCode(8203); //&NegativeMediumSpace;
-    const zwnj = String.fromCharCode(8204); //&zwnj;
-    const zwj = String.fromCharCode(8205); //&zwj;
     for (i of list) {
         if(i.addedNodes[0]){
             let new_div = i.addedNodes[0];
@@ -32,7 +29,7 @@ let callback = function(list) {
                     let image = document.createElement("img"); 
                     image.src = "https://i.imgur.com/3xIwpKb.jpg";
                     new_div.appendChild(image);
-                    msg_span.style.background = "blue"; 
+                    new_div.style.background = "blue"; 
                 }
             }
         }
