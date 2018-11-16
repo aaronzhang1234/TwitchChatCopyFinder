@@ -3,37 +3,47 @@
   <head>
     <style>
       textarea{
-          height:500px;
+          height:100px;
           width: 500px;
           outline:none;
+          text-align:center;
+      }
+      div{
+          text-align:center;
+          margin: 0 auto;
+      }
+      h1{
+          text-align:center;
       }
     </style>
   </head>
   <body>
-    <h1>pic ur pasta</h1>
-    <textarea id="pastaland"></textarea>
-    <button id="start_pasta">Start Pasta</button>
-    <button id="get_pasta">Get Pasta</button>
-    <button id="new_sig"  >Get New Signature</button>
-    <div id="button_holder">
-      <button id="sig_1" >nms</button>
-      <button id="sig_2" >nms</button>
-      <button id="sig_3" >nms</button>
-      <button id="sig_4" >nms</button>
-      <button id="sig_5" >nms</button>
-      <button id="sig_6" >nms</button>
-      <button id="sig_7" >nms</button>
-      <button id="sig_8" >nms</button>
-      <button id="sig_9" >nms</button>
-      <button id="sig_10">nms</button>
-      <button id="sig_11">nms</button>
-      <button id="sig_12">nms</button>
-      <button id="sig_13">nms</button>
-      <button id="sig_14">nms</button>
-      <button id="sig_15">nms</button>
-      <button id="sig_16">nms</button>      
+    <h1>Twitch Copy Pasta Finder</h1>
+    <textarea id="pastaland" placeholder="Put Pasta you want to mark here then press the 'Get Pasta' button"></textarea>
+    <div id="user_inputs">
+        <button id="get_pasta">Get Pasta</button>
+        <button id="new_sig"  >Get New Signature</button>
+        <button id="reset_sig">Reset Signature</button>
     </div>
-    <h3 id="pastawithsig"></h3>
+    <div id="button_holder">
+      <input alt="nms" type="image" src="kappa.png" id="sig_1" ></input>
+      <input alt="nms" type="image" src="kappa.png" id="sig_2" ></input>
+      <input alt="nms" type="image" src="kappa.png" id="sig_3" ></input>
+      <input alt="nms" type="image" src="kappa.png" id="sig_4" ></input>
+      <input alt="nms" type="image" src="kappa.png" id="sig_5" ></input>
+      <input alt="nms" type="image" src="kappa.png" id="sig_6" ></input>
+      <input alt="nms" type="image" src="kappa.png" id="sig_7" ></input>
+      <input alt="nms" type="image" src="kappa.png" id="sig_8" ></input>
+      <input alt="nms" type="image" src="kappa.png" id="sig_9" ></input>
+      <input alt="nms" type="image" src="kappa.png" id="sig_10"></input>
+      <input alt="nms" type="image" src="kappa.png" id="sig_11"></input>
+      <input alt="nms" type="image" src="kappa.png" id="sig_12"></input>
+      <input alt="nms" type="image" src="kappa.png" id="sig_13"></input>
+      <input alt="nms" type="image" src="kappa.png" id="sig_14"></input>
+      <input alt="nms" type="image" src="kappa.png" id="sig_15"></input>
+      <input alt="nms" type="image" src="kappa.png" id="sig_16"></input>      
+    </div>
+    <textarea placeholder="Your pasta with a signature should appear here and automatically pasted into your clipboard"id="pastawithsig"></textarea>
     <script src="popup.js"></script>
   </body>
 </html>

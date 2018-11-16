@@ -4,7 +4,6 @@ let historical_loc = window.location.href;
 
 setInterval(compare_locs, 5000);
 function compare_locs(){ 
-    console.log(historical_loc);
     current_loc = window.location.href;
     if(historical_loc != current_loc){
         chat = document.getElementsByClassName('tw-flex-grow-1 tw-full-height tw-pd-b-1')[0];
@@ -26,9 +25,9 @@ let callback = function(list) {
             if(findex >= 0){
                 let sig = message.substring(findex,findex+18); 
                 if(sig == signature){
-                    let image = document.createElement("img"); 
-                    image.src = "https://i.imgur.com/3xIwpKb.jpg";
-                    new_div.appendChild(image);
+                    chrome.extension.sendMessage({message:"new pasta"}, function(response){
+                        console.log("sent?");
+                    })
                     new_div.style.background = "blue"; 
                 }
             }
@@ -51,6 +50,9 @@ function parseMessage(msg_div){
                 msg_text = current_chat_item.innerHTML;
                 message += msg_text + " ";
             }
+        }else if(data_a === 'chat-message-mention'){
+            msg_text = current_chat_item.innerHTML;
+            message += msg_text + " ";
         }
     }    
     return message;
